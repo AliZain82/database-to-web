@@ -1,0 +1,15 @@
+﻿@model List<database.Models.MyTable>
+@{
+    ViewBag.Title = "Data";
+    var grid = new WebGrid(source: Model, Canpage: true, rowPerPage: 10);
+}
+<h2>Data of users</h2>
+@grid.Gethtml(
+    columns:grid.Columns(
+        grid.Column(columnName:"UserID" ,header:"Id"),
+        grid.Column(columnName:"Name" ,header:"Name"),
+        grid.Column(columnName:"City" ,header:"City")
+
+    )
+
+)
